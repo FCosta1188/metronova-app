@@ -23,10 +23,12 @@ dependencies {
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.content.negotiation)
     implementation(libs.ktor.server.netty)
-    implementation(libs.logback.classic)
     implementation(libs.ktor.server.config.yaml)
+    implementation("ch.qos.logback:logback-classic:1.5.18") //implementation(libs.logback.classic)
     implementation("org.litote.kmongo:kmongo:4.11.0")
+    implementation("org.litote.kmongo:kmongo-coroutine:4.11.0")
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
+    implementation("io.ktor:ktor-serialization-jackson:2.2.4")
 
     //test
     testImplementation(libs.ktor.server.test.host)

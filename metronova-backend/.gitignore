@@ -39,3 +39,4 @@ out/
 ### other ###
 *.env
 /TODO.md
+/.kotlin/sessions/kotlin-compiler-870424391966228430.salive
