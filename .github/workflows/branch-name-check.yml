@@ -1,9 +1,10 @@
----
-# .github/workflows/branch-name-check.yml
 name: Branch Name Check
 
 on:
   create:
+    branches:
+      - '**'
+  push:
     branches:
       - '**'
 
