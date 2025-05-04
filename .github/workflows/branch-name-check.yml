@@ -1,0 +1,20 @@
+---
+# .github/workflows/branch-name-check.yml
+name: Branch Name Check
+
+on:
+  create:
+    branches:
+      - '**'
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Controlla il nome del branch
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          if [[ ! "$BRANCH_NAME" =~ ^(feature|bugfix|hotfix|release)/[a-z0-9-]+$ ]]; then
+            echo "❌ Invalid Branch name: $BRANCH_NAME. Please refer to following RegEx pattern: ^(feature|bugfix|hotfix|release)/[a-z0-9-]+$"
+            exit 1
+          fi
